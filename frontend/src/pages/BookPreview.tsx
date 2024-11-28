@@ -93,14 +93,13 @@ export const BookPreview = () => {
       if (response.ok) {
         const data = await response.json();
         setReadingId(data._id); // Save the newly created reading ID
-        alert('Book added to your reading list!');
       } else {
         const errorData = await response.json();
-        alert(errorData.message || 'Failed to add book to the reading list.');
+        // alert(errorData.message || 'Failed to add book to the reading list.');
       }
     } catch (err) {
       console.error('Error adding book to the reading list:', err);
-      alert('An error occurred. Please try again.');
+      // alert('An error occurred. Please try again.');
     } finally {
       setIsAdding(false);
     }

@@ -17,7 +17,9 @@ function App() {
   const [loading, setLoading] = useState(true); // Loading state for auth check
   const isAuthenticated = useAuthStore((state) => !!state.user); // Check authentication
   const setUser = useAuthStore((state) => state.setUser);
-
+  const user = useAuthStore((state) => state.user);
+  console.log('user', user );  
+  console.log('isAuthenticated', isAuthenticated );  
   // Check user authentication on load
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {

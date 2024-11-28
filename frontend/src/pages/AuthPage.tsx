@@ -25,10 +25,8 @@ export function AuthPage() {
       let response;
       if (isSignUp) {
         response = await register(name, email, password);
-        alert('Registration successful! Please log in.');
       } else {
         response = await login(email, password);
-        alert('Login successful!');
       }
   
       // Log response to debug
