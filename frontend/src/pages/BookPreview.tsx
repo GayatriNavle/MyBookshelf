@@ -5,8 +5,10 @@ import { BookReader } from '../components/BookReader';
 import { fetchReadingInfo, addComment, fetchComments, rateBook,fetchUserRating } from '../lib/api';
 
 const GOOGLE_BOOKS_API = 'https://www.googleapis.com/books/v1/volumes';
-const READING_LIST_API = 'http://localhost:5001/api/reading'; // Your backend API
+// const READING_LIST_API = 'http://localhost:5001/api/reading'; // Your backend API
+import { BASE_URL } from '../lib/api';
 
+const READING_LIST_API = `${BASE_URL}/reading`;
 export const BookPreview = () => {
   const [readingId, setReadingId] = useState(null);
   const [bookContent, setBookContent] = useState([]);
