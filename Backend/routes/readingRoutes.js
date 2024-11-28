@@ -40,7 +40,7 @@ router.get('/', async (req, res) => {
     const readingList = await ReadingList.find({ userId }).populate('bookId');
     res.json(readingList);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch reading list', details: error.message });
+    // res.status(500).json({ error: 'Failed to fetch reading list', details: error.message });
   }
 });
 
@@ -179,7 +179,7 @@ router.get('/info', async (req, res) => {
     });
   } catch (error) {
     console.error('Error fetching reading info:', error);
-    res.status(500).json({ message: 'Failed to fetch reading info', details: error.message });
+    // res.status(500).json({ message: 'Failed to fetch reading info', details: error.message });
   }
 });
 
@@ -224,7 +224,7 @@ router.get('/comments', async (req, res) => {
     res.status(200).json({ comments });
   } catch (error) {
     console.error('Error fetching comments:', error);
-    res.status(500).json({ message: 'Failed to fetch comments', details: error.message });
+    // res.status(500).json({ message: 'Failed to fetch comments', details: error.message });
   }
 });
 
@@ -273,7 +273,7 @@ router.get('/rate', async (req, res) => {
     res.json({ rating: readingEntry.rating });
   } catch (error) {
     console.error('Error fetching user rating:', error);
-    res.status(500).json({ message: 'Failed to fetch user rating', details: error.message });
+    // res.status(500).json({ message: 'Failed to fetch user rating', details: error.message });
   }
 });
 module.exports = router;

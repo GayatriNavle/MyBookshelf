@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
     res.json(books);
   } catch (error) {
     console.error('Error fetching books:', error.message);
-    res.status(500).json({ error: 'Failed to fetch books' });
+    // res.status(500).json({ error: 'Failed to fetch books' });
   }
 });
 
@@ -51,7 +51,7 @@ router.get('/category/:category', async (req, res) => {
     res.json(books);
   } catch (error) {
     console.error(`Error fetching books in category ${category}:`, error.message);
-    res.status(500).json({ error: 'Failed to fetch books by category' });
+    // res.status(500).json({ error: 'Failed to fetch books by category' });
   }
 });
 

@@ -63,7 +63,7 @@ export const fetchReadingList = async (userId: string) => {
     // toast.success('Fetched your reading list!');
     return response.data;
   } catch (error: any) {
-    toast.error(error.response?.data?.message || 'Failed to fetch reading list.');
+    // toast.error(error.response?.data?.message || 'Failed to fetch reading list.');
     throw error;
   }
 };

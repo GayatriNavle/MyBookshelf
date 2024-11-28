@@ -1,16 +1,24 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, Navigate } from 'react-router-dom';
 import { useReadingList } from '../hooks/useReadingList'; // Custom hook for backend integration
 import { useQuery } from '@tanstack/react-query';
 import { fetchBooksByCategory } from '../lib/api';
 import { BookSearch } from '../components/BookSearch';
 import { useAuthStore } from '../lib/store';
+import { useNavigate } from 'react-router-dom';
 
 export function Dashboard() {
   const user = useAuthStore((state) => state.user);
   const userId = user?._id;
   const { readingList, isLoading: loadingReadingList } = useReadingList(userId);
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    if (!user) {
+      navigate('/auth'); // Redirect to the authentication page
+    }
+  }, [user, navigate]);
+  
   const renderBooks = (title, books) => (
     <section className="mb-12">
       <h2 className="text-2xl font-semibold mb-6">{title}</h2>

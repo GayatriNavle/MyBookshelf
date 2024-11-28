@@ -28,13 +28,13 @@ export const Header: React.FC = () => {
 
         {/* Navigation */}
         <nav className="flex items-center gap-6">
-          <Link
+          {/* <Link
             to="/reading"
             className="flex items-center gap-2 text-gray-600 hover:text-emerald-600 transition-colors"
           >
             <BookOpen className="w-5 h-5" />
             <span>Reading Now</span>
-          </Link>
+          </Link> */}
 
           {/* User */}
           {user ? (
