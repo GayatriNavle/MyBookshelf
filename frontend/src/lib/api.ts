@@ -5,8 +5,8 @@ import { toast } from 'react-toastify';
 const queryClient = new QueryClient();
 
 export { queryClient };
-export const BASE_URL = 'http://localhost:5001/api'; // Replace with your backend URL
-// export const BASE_URL = 'http://54.86.202.232:5001/api';
+//export const BASE_URL = 'http://localhost:5001/api'; // Replace with your backend URL
+ export const BASE_URL = 'http://54.86.202.232:5001/api';
 // Search books
 export const searchBooks = async (query: string) => {
   try {

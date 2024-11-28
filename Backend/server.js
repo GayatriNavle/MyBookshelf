@@ -8,15 +8,15 @@ const { protect } = require('./middleware/authMiddleware');
 require('dotenv').config();
 
 // Initialize Express app
-const app = express();
+// const app = express();
 
 // Middleware for parsing JSON and handling CORS
-// const corsOptions = {
-//   origin: ['http://54.86.202.232','http://localhost:5173/'], // Add your frontend's IP or domain
-//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-//   allowedHeaders: ['Content-Type', 'Authorization'],
-// };
-// app.use(cors(corsOptions));
+const corsOptions = {
+  origin: ['http://54.86.202.232','http://localhost:5173/'], // Add your frontend's IP or domain
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+};
+app.use(cors(corsOptions));
 app.use(cors());
 
 app.use(express.json());
