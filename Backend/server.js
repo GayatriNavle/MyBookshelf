@@ -7,7 +7,7 @@ const readingRoutes = require('./routes/readingRoutes');
 const { protect } = require('./middleware/authMiddleware');
 require('dotenv').config();
 
-Initialize Express app
+// Initialize Express app
 const app = express();
 
 // Middleware for parsing JSON and handling CORS
